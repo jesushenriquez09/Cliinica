@@ -1,0 +1,17 @@
+fastapi
+SQLAlchemy
+mysql-connector-python
+passlib
+uvicorn
+python-jose
+pydantic
+python-multipart
+bcrypt
+alembic
+psycopg2-binary
+python-dotenv 
+SpaCy
+NLTK
+Transformers
+TextBlob
+
