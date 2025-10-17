@@ -7,7 +7,7 @@ nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 texto = """ 
-Dolor al orinar y sensación de ardor en la vejiga y he tenido fiebre baja y malestar general.
+Tengo dolor al orinar y molestia en la vejiga desde hace dos días.
 """ 
 
 tokens = word_tokenize(texto.lower())

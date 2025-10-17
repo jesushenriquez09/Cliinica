@@ -14,4 +14,4 @@ SpaCy
 NLTK
 Transformers
 TextBlob
-
+ultralytics
