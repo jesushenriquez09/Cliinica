@@ -16,3 +16,4 @@ Transformers
 TextBlob
 ultralytics
 es_core_news_md
+langdetect

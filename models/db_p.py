@@ -68,6 +68,8 @@ class Historial(Base):
     paciente = relationship("Users", foreign_keys=[user_id], back_populates="historial_medico")
     imagenes = relationship("Imagenes", back_populates="historial_medico")
     diagnostico = relationship("Diagnostico", back_populates="historiales")
+    # Entidades extraídas (tabla relacionada)
+    entidades_rel = relationship("Entidad", back_populates="historial", cascade="all, delete-orphan")
 
 
 
@@ -80,3 +82,14 @@ class Imagenes(Base):
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
 
     historial_medico = relationship("Historial", back_populates="imagenes")
+
+
+class Entidad(Base):
+    __tablename__ = "entidades"
+    id = Column(Integer, primary_key=True)
+    historial_id = Column(Integer, ForeignKey("historial.id", ondelete="CASCADE"), nullable=False)
+    label = Column(String(100), nullable=True)
+    texto = Column(String(255), nullable=False)
+    created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+
+    historial = relationship("Historial", back_populates="entidades_rel")
