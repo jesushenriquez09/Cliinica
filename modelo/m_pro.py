@@ -1,30 +1,30 @@
-from typing import Optional
 from pydantic import BaseModel
+from typing import Optional
+
 
 class vhBase(BaseModel):
-    name_product: str
-    price: Optional[int]
-    stock: Optional[int]
-    placa: str
-    color: str
-    status_id: Optional[int]
-    category_id: Optional[int]
-    modelo_id: Optional[int]
+    texto_original: str
+    resumen: str
+    traduccion: str
+    entidades: str
+    palabras_claves: str
+    sentimiento: str
+    diagnosticos_id: Optional[int]
+    cita_id: Optional[int]
+    user_id: Optional[int]
+
 
 class vhcreate(vhBase):
- pass
+    pass
+
+
+class nlp_create(BaseModel):
+    texto_original: str
+
 
 class vh(vhBase):
-    id:int 
+    id: int
     user_id: Optional[int]
 
     class Config:
         from_attributes = True
-      
-
-
-    
-
-
-    
-    

@@ -1,5 +1,9 @@
 from fastapi import FastAPI  
-from routes.products import VH
+#from routes.products import  VH
+from routes.Usuario import UsuarioRouter
+from routes.nlp_routes import nlp_route 
+from routes.citas_routes import citas_router 
+from routes.diagnosticos_routes import router as router_diagnosticos
 from alembic import command
 from alembic.config import Config
 #from models import db_p
@@ -33,5 +37,8 @@ app.add_middleware(
 )
 
 
-app.include_router(VH)
-
+#app.include_router(VH)
+app.include_router(UsuarioRouter)
+app.include_router(nlp_route)
+app.include_router(citas_router)
+app.include_router(router_diagnosticos)

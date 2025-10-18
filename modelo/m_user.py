@@ -5,6 +5,7 @@ from pydantic import BaseModel
 class users(BaseModel):
     username:  str | None = None
     password:  str | None = None
+    email:  str | None = None
     phone_number: Optional[int]
     rol_id: Optional[int]
     
@@ -22,7 +23,7 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[int] = None
-    #username: Union[str, None] = None
+    role: Optional[str] = None
    
 
     

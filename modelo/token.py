@@ -19,9 +19,15 @@ def verify_token(token:str, credentials_exception):
         print(f"Token recibido: {token}")
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         id: Optional[int] = payload.get("user_id")
+        role = payload.get("role")
+        
+        # Asegurarse de que el rol sea una cadena
+        role_str = str(role) if role is not None else None
+        
         if id is None:
             raise credentials_exception
-        token_data = TokenData(id=id)
+        
+        token_data = TokenData(id=id, role=role_str)
         #print(f"TokenData generado: {token_data}")
     except JWTError as e:
         print(f"Error decodificando token: {e}")
