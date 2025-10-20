@@ -4,10 +4,10 @@ from nltk.tokenize  import word_tokenize
 import nltk 
 nltk.download('stopwords')
 
-texto = """ 
+''' texto = """ 
 Tengo dolor al orinar y molestia en la vejiga desde hace dos días.
-""" 
-def resumen_nlp(texto: str):
+"""  '''
+def resumen_nlp(texto):
     blob = TextBlob(texto) 
 
     frases = blob.sentences 
@@ -20,7 +20,8 @@ def resumen_nlp(texto: str):
         return ' '.join(palabras_filtradas) 
 
     resumen = "".join([procesar_frase(frase) for frase in frases[:2]])
-    print(resumen) 
+    #print(resumen) 
     return resumen
         
-resumen_nlp(texto)
+''' resultado = resumen_nlp(texto) 
+print(resultado) '''

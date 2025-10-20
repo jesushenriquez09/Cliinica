@@ -22,7 +22,10 @@ def nlp_palabras_claves(texto: str):
     tokens_filtrados = [word for word in tokens if word.isalnum() and word not in stop_words]   
     frecuencia = FreqDist(tokens_filtrados)
     print("palabras claves")
-    for palabra,frecuencia in frecuencia.most_common(5):
-     print(f"{palabra}: {frecuencia}")
+    palabras_claves = [palabra for palabra, freq in frecuencia.most_common(5)]
 
-nlp_palabras_claves(texto) 
+    #print(palabras_claves)
+    return palabras_claves
+    
+''' resultado = nlp_palabras_claves(texto) 
+print(resultado) '''
